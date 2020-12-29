@@ -27,7 +27,7 @@ class Solution{
       if(nums[mid] < nums[0]) r = mid;
       else l = mid + 1;
     }
-    return nums[l]
+    return nums[l];//或nums[r]
   }
 }
 ```
