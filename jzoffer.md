@@ -124,3 +124,49 @@ public class Solution {
     }
 }
 ```
+## JZ7  跳台阶 :flushed:
+`入门` `题目`<br>
+*一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。<br>
+`考点`<br>
+斐波拉契数列
+递归：递归的算法复杂度更高<br>
+思路：<br>
+(1)当n=0时，返回0<br>
+(2)当n=1时，只有一种跳法<br>
+(3)当n=2时，有两种跳法：一次跳一级或者一次性跳两级<br>
+(4)当 𝑛=3时，我们只考虑最后一步的情况：(a)当最后一步只跳1级时， 𝑓(3)=𝑓(3−1)<br>
+                                 (b)当最后一步直接跳2级时， 𝑓(3)=𝑓(3−2)。因此 𝑓(3)=𝑓(3−1)+𝑓(3−2)<br>
+(5)以此类推，当 𝑛=𝑁时，只需考虑最后一步的情况即可：(a)当最后一步只跳1级时， 𝑓(𝑁)=𝑓(𝑁−1)<br>
+                                           (b)当最后一步直接跳2级时， 𝑓(𝑁)=𝑓(𝑁−2)<br>
+   因此 𝑓(𝑁)=𝑓(𝑁−1)+𝑓(𝑁−2)。由此可以得出，实际上为斐波那契数列问题
+<br><br>
+`代码`<br>
+解法一：递归
+解法二：同斐波那契数列题
+```java
+//递归
+public class Solution {
+    public int Fibonacci(int n) {
+        if(n==0|n==1|n==2)return n;
+        return Fibonacci(n-1) + Fibonacci(n-2);
+    }
+}
+
+```
+```java
+public class Solution {
+    public int JumpFloor(int target) {
+        if(target == 0) return 1;
+        if(target == 1) return 1;
+        int res = 0;
+        int first = 1;
+        int second = 1;
+        for(int i=2; i <= target; i++){
+            res = (first + second) % 1000000007;
+            first = second % 1000000007;
+            second = res % 1000000007;
+        }
+        return res;
+    }
+}
+```
