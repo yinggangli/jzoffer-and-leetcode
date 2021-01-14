@@ -35,5 +35,36 @@ class Solution{
 `简单``题目`<br>
 *用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。*<br><br>
 `考点`<br>
-<font color=HotPink>栈 队列</font>
+栈 队列<br>
+栈 先进后出<br>
+队列 先进后出<br>
+`代码`<br>
+```java
+import java.util.Stack;
+
+public class Solution {
+    //栈    先进后出
+    //队列  先进先出
+    Stack<Integer> stack1 = new Stack<Integer>();
+    Stack<Integer> stack2 = new Stack<Integer>();
+    int size = 0;
+    
+    public void push(int node) {
+        //插入一个元素
+        //stack1保存 队列的底部存新插入的，顶部存老的元素
+        //可以看作两个竹筒倒豌豆
+        while(!stack1.isEmpty()) stack2.push(stack1.pop());
+        stack1.push(node);
+        while(!stack2.isEmpty()) stack1.push(stack2.pop());
+        size ++;
+    }
+    
+    public int pop() {
+        //删除队列的首部元素
+        if(size == 0) return 0;
+        int res = stack1.pop();
+        size --;
+        return res;
+    }
 }
+```
