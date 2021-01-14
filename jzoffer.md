@@ -31,14 +31,14 @@ class Solution{
   }
 }
 ```
-## JZ6  旋转数组的最小数 :flushed:
+## JZ5  用两个栈实现队列 :flushed:
 `简单` `题目`<br>
 *用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。*<br><br>
 `考点`<br>
 栈 队列<br>
 栈 先进后出<br>
 队列 先进后出<br>
-`代码`
+`代码`<br>
 ```java
 import java.util.Stack;
 
