@@ -31,3 +31,9 @@ class Solution{
   }
 }
 ```
+## JZ6  旋转数组的最小数 :flushed:
+`简单``题目`<br>
+*用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。*<br><br>
+`考点`<br>
+<font color=HotPink>栈 队列</font>
+}
