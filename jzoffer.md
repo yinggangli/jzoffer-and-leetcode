@@ -134,10 +134,10 @@ public class Solution {
 (1)当n=0时，返回0<br>
 (2)当n=1时，只有一种跳法<br>
 (3)当n=2时，有两种跳法：一次跳一级或者一次性跳两级<br>
-(4)当 𝑛=3时，我们只考虑最后一步的情况：
+(4)当 𝑛=3时，我们只考虑最后一步的情况：<br>
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a)当最后一步只跳1级时， 𝑓(3)=𝑓(3−1)<br>
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b)当最后一步直接跳2级时， 𝑓(3)=𝑓(3−2)。因此 𝑓(3)=𝑓(3−1)+𝑓(3−2)<br>
-(5)以此类推，当 𝑛=𝑁时，只需考虑最后一步的情况即可：
+(5)以此类推，当 𝑛=𝑁时，只需考虑最后一步的情况即可：<br>
                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a)当最后一步只跳1级时， 𝑓(𝑁)=𝑓(𝑁−1)<br>
                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b)当最后一步直接跳2级时， 𝑓(𝑁)=𝑓(𝑁−2)<br>
    因此 𝑓(𝑁)=𝑓(𝑁−1)+𝑓(𝑁−2)。由此可以得出，实际上为斐波那契数列问题
@@ -182,12 +182,12 @@ public class Solution {
 (1)当n=0时，返回0<br>
 (2)当n=1时，只有一种跳法<br>
 (3)当n=2时，有两种跳法：一次跳一级或者一次性跳两级<br>
-(4)当 𝑛=3时，我们只考虑最后一步的情况：
+(4)当 𝑛=3时，我们只考虑最后一步的情况：<br>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a)当最后一步只跳1级时， 𝑓(3)=𝑓(3−1)<br>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b)当最后一步直接跳2级时， 𝑓(3)=𝑓(3−2)<br>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c)当最后一步直接跳3级时，f(3)=1<br>
     f(3) = f(3-1) + f(3-2) + 1<br>
-(5)以此类推，当 𝑛=𝑁时，只需考虑最后一步的情况即可：
+(5)以此类推，当 𝑛=𝑁时，只需考虑最后一步的情况即可：<br>
                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a)当最后一步只跳1级时， 𝑓(𝑁)=𝑓(𝑁−1)<br>
                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b)当最后一步直接跳2级时， 𝑓(𝑁)=𝑓(𝑁−2)<br>
                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c)当最后一步直接跳3级时，f(N)=f(N-3)<br>
