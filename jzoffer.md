@@ -141,7 +141,7 @@ public class Solution {
    因此 𝑓(𝑁)=𝑓(𝑁−1)+𝑓(𝑁−2)。由此可以得出，实际上为斐波那契数列问题
 <br><br>
 `代码`<br>
-解法一：递归
+解法一：递归<br>
 解法二：同斐波那契数列题
 ```java
 //递归
@@ -154,6 +154,7 @@ public class Solution {
 
 ```
 ```java
+//同斐波那契数列
 public class Solution {
     public int JumpFloor(int target) {
         if(target == 0) return 1;
