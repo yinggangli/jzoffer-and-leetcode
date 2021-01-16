@@ -386,3 +386,25 @@ public class Link {
     }
 }
 ```
+## JZ15  反转链表 :flushed:
+`简单` `题目`<br>
+*输入一个链表，反转链表后，输出新链表的表头。* <br><br>
+`考点`<br>
+链表<br><br>
+`代码`<br>
+```java
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        ListNode cur = head;
+        ListNode pre = null;
+        if(head==null) return null;
+        while(cur != null){
+            ListNode temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+    }
+}
+```
