@@ -256,6 +256,7 @@ public class Solution {
 }
 ```
 ```java
+//归并
 public class Solution {
     public ListNode Merge(ListNode list1,ListNode list2) {
         if(list1 == null){
@@ -276,6 +277,112 @@ public class Solution {
             }
         }
         return list1; //list1 == list2
+    }
+}
+```
+`链表的实现代码`
+```java
+public class Node{
+    Object data;
+    Node next;
+    public Node(){}
+    public Node(Object data, Node next){
+        this.data = data;
+        this.next = next
+    }
+}
+
+public class Link{
+    Node header;
+    int index = 0;
+    public void add(Object data){
+        if(null == header){
+            header = new Node(data, null);
+        } else{
+            Node currentFinalNode = findLastNode(header);
+            currentFinalNode.next = new Node(data, null)
+        }
+        this.index ++;
+    }
+    public Node findLastNode(Node node){
+        if(node.next == null) return node;
+        return findLastNode(node);
+    }
+}
+```
+```java
+public class Node {
+    public int val;
+    public Node next = null;
+    public Node() {}
+    public Node(int val) { this.val = val;}
+}
+
+public class Link {
+    private Node head = null;
+
+    public boolean add(int a){
+        Node newNode = new Node(a);
+        if (head == null){
+            head = newNode;
+            return true;
+        }
+        //如果头节点不为空，则需要找到尾部节点
+        Node curNode = head;
+        while (curNode.next != null){
+            curNode = curNode.next;
+        }
+        curNode.next = newNode;
+        return true;
+    }
+
+    public boolean delete(int a){
+        if (head == null) return false;
+        if (head.val == a){
+            head = head.next;
+            return true;
+        }
+        Node curNode = head;
+        while (curNode.next != null){
+            if (curNode.next.val == a){
+                curNode.next = curNode.next.next;
+                return true;
+            }
+            curNode = curNode.next;
+        }
+        return false;
+    }
+
+    public int size(){
+        int length = 0;
+        Node curNode = head;
+        while (curNode != null){
+            length ++;
+            curNode = curNode.next;
+        }
+        return length;
+    }
+
+    public int find(int a){//查找节点，返回下标
+        Node curNode = head;
+        int flag = 0;
+        while (curNode.next != null){
+            if (curNode.val != a){
+                flag ++;
+                curNode = curNode.next;
+            }
+            return flag;
+        }
+        return -1;
+    }
+
+    public Node get(int a){//用下标查找节点
+        if (head == null) return null;
+        Node curNode = head;
+        for (int i=0; i<a; i++){
+            curNode = curNode.next;
+        }
+        return curNode;
     }
 }
 ```
