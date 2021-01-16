@@ -212,7 +212,10 @@ public class Solution {
 `入门` `题目`<br>
 *输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。*<br><br>
 `考点`<br>
- 链表<br><br>
+ 链表<br>
+ 归并<br>
+ 递归<br><br>
+ 
 `代码`<br>
 ```java
 public class Solution {
@@ -249,6 +252,30 @@ public class Solution {
         if(list1 == null) cur.next = list2;
         if(list2 == null) cur.next = list1;
         return head;
+    }
+}
+```
+```java
+public class Solution {
+    public ListNode Merge(ListNode list1,ListNode list2) {
+        if(list1 == null){
+            return list2;
+        }
+        if(list2 == null){
+            return list1;
+        }
+        while(list1 != null && list2 != null){
+            if(list1.val < list2.val){  //比较list1的val 与 list2的val
+                //将list2的元素添加到list1中，直到list1.val 》 list2.val
+                list1.next = Merge(list1.next,list2); 
+                return list1;												
+            }else{
+                //将list1的元素添加到list2中，直到list1.val 《 list2.val
+                list2.next = Merge(list1,list2.next);
+                return list2;
+            }
+        }
+        return list1; //list1 == list2
     }
 }
 ```
